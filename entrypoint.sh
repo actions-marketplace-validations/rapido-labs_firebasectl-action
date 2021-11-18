@@ -42,6 +42,5 @@ ${firebasectl_output}
         echo "firebasectl: info: commenting on the pull request"
         echo "${firebasectl_payload}" | curl -s -S -H "Authorization: token ${GITHUB_ACCESS_TOKEN}" --header "Content-Type: application/json" --data @- "${firebasectl_comment_url}" > /dev/null
     fi
-echo $firebasectl_comment_wrapper
 echo ::set-output name=firebasectl_output::${firebasectl_output}
 exit ${firebasectl_exit_code}
