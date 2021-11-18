@@ -1,0 +1,20 @@
+# action.yaml
+name: 'Rapido firebasectl Github Action'
+author: 'system@rapido.bike'
+description: 'Github action for firebasectl - manily to liniting yaml files for k8s config'
+branding:
+  icon: 'sliders'
+  color: 'green'
+inputs:
+  FIREBASE_CTL_ACTION:
+    description: "It can be one of get | validate | diff | apply "
+    required: true
+  FIREBASE_CTL_DIR:
+    description: "Remote Configuration location. This is where the configurations will be read from/written to"
+    required: true
+outputs:
+  firebasectl_output:
+    description: 'Output of firebasectl'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
